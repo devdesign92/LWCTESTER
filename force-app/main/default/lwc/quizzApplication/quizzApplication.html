@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Quizz Application">
+      <template if:true={isAnswer}>
+        <div class={isScoreFull}> {isAnswer}, You score is {ScoreNumber} out of {outOfQues}</div>
+</template>
+        <form class="slds-m-arround_medium">
+        <template for:each={Questions} for:item="Quiz">
+<div key={Quiz.id} class="slds-m-bottom_medium">
+
+<div class="slds-m-top_xx-large">
+<strong>{Quiz.ID} - {Quiz.Question}</strong>
+</div>
+<div class="slds-grid slds-gutters">
+    <div class="slds-col">
+        <input type="radio" name={Quiz.ID} value="a" onchange={handler}/>
+   {Quiz.Answers.a}
+    </div>
+    <div class="slds-col">
+        <input type="radio" name={Quiz.ID} value="b" onchange={handler}/>
+
+      {Quiz.Answers.b}
+    </div>
+    <div class="slds-col">
+        <input type="radio" name={Quiz.ID} value="c" onchange={handler}/>
+
+     {Quiz.Answers.c}
+    </div>
+  </div>
+
+</div>
+
+</template>
+<div class="slds-var-m-top_medium">
+<lightning-button variant="brand" label="Submit" title="Submit" onclick={submit} class="slds-m-left_x-small" disabled={isShow}></lightning-button>
+<lightning-button variant="brand" label="Reset" type="reset" title="Reset" onclick={ResetHandler} class="slds-m-left_x-small"></lightning-button>
+</div>
+</form>
+<div>{isShow}</div>
+</lightning-card>
+</template>

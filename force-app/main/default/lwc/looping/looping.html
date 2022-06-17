@@ -1,0 +1,20 @@
+
+<template>
+    <lightning-card title="FOR:EACH">
+        <div class="slds-item">
+    <template for:each={Laptop} for:item="Lappy">
+<div key={Lappy} class="slds-p-around_medium lgc-bg">{Lappy}</div>
+    </template> </div>
+</lightning-card>
+
+
+<lightning-card title="ITERATION">
+    <div class="slds-item">
+<template iterator:myappy={Company}>
+  
+<div key={myappy.value.id} class="slds-var-m-around_medium">{myappy.value.name}, {myappy.value.city}</div>
+</template> </div>
+</lightning-card>
+
+</template>
+

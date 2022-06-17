@@ -1,0 +1,31 @@
+<template>
+ 
+    
+
+    <lightning-card  variant="Narrow"  title="Two way Binding" icon-name="standard:account">
+    <div class="slds-m-bottom_small">
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" label="Enter Course  Name" onkeyup={ChangeHandler}></lightning-input>
+        <div>Hello, This is your {title}</div>
+    </div> 
+    </div>
+    </lightning-card>
+
+    <lightning-card  variant="Narrow"  title="Track Properties" icon-name="standard:account">
+  
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Enter Course  Name" onkeyup={TrackObj}></lightning-input>
+            <div>This is your city {pro.city} and course is {title}</div>
+        </div>
+  </lightning-card>
+  
+  <lightning-card  variant="Narrow"  title="Gatter Demo" icon-name="standard:account">
+  
+    <div class="slds-p-around_medium lgc-bg">
+
+        <div>This is getter Value of array {FirstName}</div>
+        <div>This is Multiplication Value of array {result}</div>
+    </div>
+</lightning-card>
+
+</template>

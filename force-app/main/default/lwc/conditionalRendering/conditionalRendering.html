@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Conditonal Rendering">
+        <lightning-button variant="brand" label="Brand" title="Primary action" 
+        onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+<template if:true={isValid}>
+<div>
+    <lightning-input type="text" label="Enter some text" onkeyup={handle}></lightning-input>
+</div>
+</template>
+<template if:true={expression}>
+    Hurrayyy !! 
+</template>
+    </lightning-card>
+</template>
