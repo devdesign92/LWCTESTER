@@ -47,24 +47,24 @@ export default class QuizzApplication extends LightningElement {
         const Name = event.target.name;
         const Value = event.target.value;
         this.Select = {...this.Select,[Name]:Value};
-         console.log(this.Select);
+      //   console.log(this.Select);
      }
      get ScoreNumber(){
         return this.coorectAnsWEred;
      }
    
 
-    submit(event){
+    submit(event){ 
         event.preventDefault();
         console.log("submit")
-      
-      //  console.log('select value'+this.Select[1]);
-    // keyVal = Object.keys(this.Select)
+        console.log('select value'+this.Select[1]);
+         console.log(Object.keys(this.Select));
+        // keyVal = Object.keys(this.Select)
     let correct = this.Questions.filter(item=>this.Select[item.ID] === item.correctAns)
-       console.log('Correct Answer'+correct.length);
-       this.coorectAnsWEred = correct.length;
-       this.isAnswer = true;
-      // console.log(Object.keys(this.Select));
+    console.log(correct);
+    this.coorectAnsWEred = correct.length;
+    this.isAnswer = true;
+     console.log('my name');
     }
     ResetHandler(){
         console.log("rest");
@@ -74,8 +74,8 @@ export default class QuizzApplication extends LightningElement {
     }
  
    get isShow(){
-    console.log('Lennght' +Object.keys(this.Select))
-    console.log(this.Questions.length);
+ //   console.log('Lennght' +Object.keys(this.Select))
+  //  console.log(this.Questions.length);
     return !(Object.keys(this.Select).length === this.Questions.length);
    }
   get outOfQues(){
@@ -85,6 +85,7 @@ export default class QuizzApplication extends LightningElement {
     return `slds-text-heading_large ${this.Questions.length === this.coorectAnsWEred?
         'slds-text-color_success':'slds-text-color_error'}`
 }
+
    
 }
 

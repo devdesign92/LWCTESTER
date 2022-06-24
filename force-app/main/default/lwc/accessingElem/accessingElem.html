@@ -1,0 +1,14 @@
+<template>
+<lightning-card title="Accesing Element">
+<h1>This is Min</h1>
+
+<template for:each={UserName} for:item="user">
+
+<div key={user} class="Name" >{user}</div>
+
+</template>
+<div class="Child" lwc:dom="manual"></div>
+
+<lightning-button variant="brand" label="Brand" title="Fetch Data" onclick={fetchClick} class="slds-m-left_x-small"></lightning-button>
+</lightning-card>
+</template>
